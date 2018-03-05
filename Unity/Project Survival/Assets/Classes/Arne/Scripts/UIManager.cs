@@ -6,82 +6,160 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour 
 {
-	//health test related stuff
-	public float maxHP;
-	public float health;
-	private float healthPercentage;
-	public float dmg;
+	//Things to be added:
+	/*
+	AMMO COUNT PER WEAPON
+
+	TIMER
+	
+	WAVECOUNT
+
+	ENEMIES LEFT
+	
+	NEW UI AND FONT:
+	CROSSHAIR, BUTTONS, HEALTHBAR, AMMOBAR, WEAPONSWITCH
+	
+	*/
+
+	//script reference
+	private PlayerStats playerStats;
+	
+
+	//health
 	public Image healthBar;
 
 
-	//all menu items
+	//UI stuff
 	public List<RectTransform> allMenuItems = new List<RectTransform>();
-	public RectTransform mainMenu, pauseMenu; //gonna add more to these 
-	public enum UIState {MainMenu, Ingame};
+	public RectTransform mainMenu, pauseMenu, ingame, settings, gameOver; //gonna add more to these 
+	public enum UIState {MainMenu, Ingame, GameOver};
 	public UIState _UIState;
-	public KeyCode key;
+
+	public bool paused, settingsActive;
+	public KeyCode esc;
 
 
 	//sets some things ready
-	void Awake () 
-	{	
-		maxHP = 100;
-		health = maxHP;
+	private void Awake () {	
+		
+		//playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
+		CheckUIState();
 	}
-	//for testing purposes
-	void Update () 
-	{
-		if(Input.GetKeyDown(key))
-		{
-			health -= dmg;
-		}
-		CheckHealth();
+	private void Update () {
+
+		PressEscape();
 	}
-	void CheckUIState () 
-	{
-		switch (_UIState)
-        {
+	private void CheckUIState () {
+
+		switch (_UIState) {
+
         case UIState.MainMenu:
 
-            
+			Time.timeScale = 0;
+            List<RectTransform> mainmenulist = new List<RectTransform>() {mainMenu};
+			EnableMenuItems(mainmenulist);
+
             break;
 
         case UIState.Ingame:
 
+			List<RectTransform> ingameList = new List<RectTransform>() {ingame};
+			EnableMenuItems(ingame);
             
             break;
+
+		case UIState.GameOver:
+
+			List<RectTransform> gameOverList = new List<RectTransform>() {gameOver};
+			EnableMenuItems(gameOverList);
+
+			break;
         }
 	}
-	void SetState (UIState state)
-	{
+	//makes you pause ingame or unpause
+	private void PressEscape () {
+
+		print("esc");
+		
+		if(Input.GetKeyDown(esc) && _UIState == UIState.Ingame && paused == false) {
+
+			print("pause");
+			paused = true;
+			Time.timeScale = 0;
+			pauseMenu.gameObject.SetActive(true);
+
+			print(Time.timeScale);
+			//pause game and turns pausemenu on
+			//if statements so you can esc out of every window
+		}		
+		else if(Input.GetKeyDown(esc) && settingsActive == true) {
+
+			SettingMenu();
+		}
+		else if(Input.GetKeyDown(esc) && _UIState == UIState.Ingame && paused == true) {
+
+			print("unpause");
+			paused = false;
+			Time.timeScale = 1;
+			pauseMenu.gameObject.SetActive(false);
+
+			print(Time.timeScale);
+			//pause game and turns pausemenu on
+			//if statements so you can esc out of every window
+		}		
+	}
+		//sets state and checks the next state 
+	public void SetState (UIState state) {
+
 		_UIState = state;
+		paused = false;
+		settingsActive = false;
 		CheckUIState();
 	}
+	//make you enable or disable the settings
+	public void SettingMenu () {
+
+		settingsActive = !settingsActive;
+		settings.gameObject.SetActive(settingsActive);
+		//enables settings rectTransform or disables it
+	}
+	public void MainMenu () {
+
+		SetState(UIState.MainMenu);
+		//activate camera rotate script
+	}
+	public void Ingame () {
+
+		SetState(UIState.Ingame);
+		Time.timeScale = 1;
+	}
+	public void QuitGame () {
+
+		//application.close
+	}
 	//receives items and will make a list of them that will get send to another function
-	 public void EnableMenuItems(RectTransform item)
-    {
+	private void EnableMenuItems(RectTransform item) {
+
         List<RectTransform> items = new List<RectTransform>() { item };
         EnableMenuItems(items);
     }
     //gets a list that will in which the objects will get set true after everything is set false
-    public void EnableMenuItems(List<RectTransform> items)
-    {
+    private void EnableMenuItems(List<RectTransform> items) {
+
         foreach (RectTransform rT in allMenuItems)
             rT.gameObject.SetActive(false);
+
         foreach (RectTransform rT in items)
             rT.gameObject.SetActive(true);
     }
 	//checks health and updates ui
-	public void CheckHealth () //needs overload so it can receive health or take damage
+	public void CheckHealth () 
 	{
-		//get a percentage of health, because fillamount is between 1 and 0
-		healthPercentage = health / maxHP;
-		Debug.Log(healthPercentage);
-		healthBar.fillAmount = healthPercentage;
+		healthBar.fillAmount = playerStats.healthPercentage;
 	}
 	//checks ammo and updates ui    	NOT MADE YET
 	public void CheckAmmo () //needs overload so it can receive health or damage
 	{
-
+		//current weapons ammo
 	}
 }
