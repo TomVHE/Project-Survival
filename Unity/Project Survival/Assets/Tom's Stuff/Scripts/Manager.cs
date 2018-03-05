@@ -6,5 +6,6 @@ public class Manager : MonoBehaviour {
 
 	[HideInInspector]
 	public static int score;
+	[Range(1,100)]
 	public static int currentWave = 1;
 }
