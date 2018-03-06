@@ -9,7 +9,6 @@ public class CameraLook : MonoBehaviour {
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
-
     private Transform player;
 
     void Start() {
@@ -18,10 +17,8 @@ public class CameraLook : MonoBehaviour {
 
     void Update() {
         yaw += speedH * Input.GetAxis("Mouse X");
-        pitch -= speedV * Input.GetAxis("Mouse Y");
-
+        pitch -= speedV * Input.GetAxis ("Mouse Y");
         player.eulerAngles = new Vector3(0.0f, yaw, 0.0f);
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-
+        transform.eulerAngles = new Vector3 (Mathf.Clamp (pitch, -90f, 90f), yaw, 0.0f); //issues met locken op de clamps die zijn aangegeven.
     }
 }
