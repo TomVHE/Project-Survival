@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Classes/Arne/_Scenes/Arne Test Scene.unity
+=======
+- path: Assets/Scenes/Test Scenes/Rief.unity
+>>>>>>> ea04e457ceea8befd5f2262d9af9f233638a6f57
   isLoaded: 1
   isActive: 1
