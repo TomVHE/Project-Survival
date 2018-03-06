@@ -4,13 +4,34 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour {
 
+	//weapons
+	public List<GameObject> weapons = new List<GameObject>();
+	public GameObject currentWeapon;
+
+	//health 
+	public float maxHP;
+	public float health;
+	public float healthPercentage;
+
+	private void Awake () {
+
+		maxHP = 100;
+		health = maxHP;
+	}
+
 	// Use this for initialization
-	void Start () {
+	private void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	private void Update () {
 		
 	}
+	public void PlayerHealth (float dmg) {
+
+		health -= dmg;
+		healthPercentage = health / maxHP;
+	}
+
 }
