@@ -6,6 +6,13 @@ using UnityEngine;
 
 public class RotateCamera : MonoBehaviour {
 
+	private CameraRotation lookScript;
+	private MovementPlayer movement;
+
+	private void Awake () {
+
+		//disable moving and look scripts
+	}
 	//constantly rotates
 	void FixedUpdate () 
 	{

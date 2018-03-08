@@ -24,9 +24,13 @@ public class UIManager : MonoBehaviour
 	//script reference
 	private PlayerStats playerStats;
 	
+	private RotateCamera camRotateScript;
 
 	//health
 	public Image healthBar;
+
+	//ammo
+	public Text ammoText;
 
 
 	//UI stuff
@@ -39,11 +43,17 @@ public class UIManager : MonoBehaviour
 	public KeyCode esc;
 
 
+	bool cursorActive;
+
+
 	//sets some things ready
 	private void Awake () {	
 		
-		//playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
+		camRotateScript = GameObject.Find("Camera").GetComponent<RotateCamera>();
+		playerStats = GameObject.Find("Body").GetComponent<PlayerStats>();
 		CheckUIState();
+
+		cursorActive = false;
 	}
 	private void Update () {
 
@@ -55,6 +65,8 @@ public class UIManager : MonoBehaviour
 
         case UIState.MainMenu:
 
+			camRotateScript.gameObject.SetActive(true);
+
 			Time.timeScale = 0;
             List<RectTransform> mainmenulist = new List<RectTransform>() {mainMenu};
 			EnableMenuItems(mainmenulist);
@@ -63,8 +75,10 @@ public class UIManager : MonoBehaviour
 
         case UIState.Ingame:
 
+			camRotateScript.gameObject.SetActive(false);
 			List<RectTransform> ingameList = new List<RectTransform>() {ingame};
 			EnableMenuItems(ingame);
+			SwitchCursorState();
             
             break;
 
@@ -72,18 +86,16 @@ public class UIManager : MonoBehaviour
 
 			List<RectTransform> gameOverList = new List<RectTransform>() {gameOver};
 			EnableMenuItems(gameOverList);
+			SwitchCursorState();
 
 			break;
         }
 	}
 	//makes you pause ingame or unpause
 	private void PressEscape () {
-
-		print("esc");
 		
 		if(Input.GetKeyDown(esc) && _UIState == UIState.Ingame && paused == false) {
 
-			print("pause");
 			paused = true;
 			Time.timeScale = 0;
 			pauseMenu.gameObject.SetActive(true);
@@ -98,7 +110,6 @@ public class UIManager : MonoBehaviour
 		}
 		else if(Input.GetKeyDown(esc) && _UIState == UIState.Ingame && paused == true) {
 
-			print("unpause");
 			paused = false;
 			Time.timeScale = 1;
 			pauseMenu.gameObject.SetActive(false);
@@ -136,6 +147,19 @@ public class UIManager : MonoBehaviour
 	public void QuitGame () {
 
 		//application.close
+	}
+	private void SwitchCursorState () {
+
+		cursorActive = !cursorActive;
+		if(!cursorActive) {
+
+			Cursor.lockState = CursorLockMode.None; 
+		}
+		else {
+
+			Cursor.lockState = CursorLockMode.Locked; 
+		}
+		
 	}
 	//receives items and will make a list of them that will get send to another function
 	private void EnableMenuItems(RectTransform item) {
