@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Classes/Arne/_Scenes/Main Demo.unity
+- path: Assets/Scenes/Test Scenes/Thomas.unity
   isLoaded: 1
   isActive: 1
