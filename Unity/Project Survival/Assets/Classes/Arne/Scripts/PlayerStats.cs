@@ -12,15 +12,20 @@ public class PlayerStats : MonoBehaviour {
 	public float maxHP;
 	public float health;
 	public float healthPercentage;
+	UIManager uim;
+
+
 
 	private void Awake () {
 
+		uim = GameObject.Find("Canvas").GetComponent<UIManager>();
 		maxHP = 100;
 		health = maxHP;
 	}
 
 	// Use this for initialization
 	private void Start () {
+		
 		
 	}
 	
@@ -32,6 +37,7 @@ public class PlayerStats : MonoBehaviour {
 
 		health -= dmg;
 		healthPercentage = health / maxHP;
-	}
+		uim.CheckHealth();
 
+	}
 }
