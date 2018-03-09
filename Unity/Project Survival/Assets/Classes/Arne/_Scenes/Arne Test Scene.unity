@@ -210,6 +210,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114800031516269296, guid: fe5b23e1afc54c649965d2dfc6453f25,
+        type: 2}
+      propertyPath: _UIState
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe5b23e1afc54c649965d2dfc6453f25, type: 2}
   m_IsPrefabParent: 0
@@ -512,7 +517,6 @@ GameObject:
   - component: {fileID: 1267244739}
   - component: {fileID: 1267244738}
   - component: {fileID: 1267244742}
-  - component: {fileID: 1267244743}
   - component: {fileID: 1267244744}
   m_Layer: 0
   m_Name: Main Camera
@@ -593,17 +597,6 @@ Skybox:
   m_GameObject: {fileID: 1267244737}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: dedb315f69cc76e4180d918629190858, type: 2}
---- !u!114 &1267244743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1267244737}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 110c758d1caca574aad420a378311940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1267244744
 MonoBehaviour:
   m_ObjectHideFlags: 0
