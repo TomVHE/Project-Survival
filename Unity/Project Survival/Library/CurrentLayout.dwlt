@@ -65,7 +65,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: Mijn Layout
+  m_LastLoadedLayoutName: 
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 1957
+  controlID: 6075
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 1887
+  controlID: 6011
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -343,9 +343,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 22450000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 5ab5ffff6ee3ffff38f2ffff9efbffff00000000103a0000563b0000483e000076400000
+    m_ExpandedIDs: 4cf0fdfffc0efeffbe52fefff6aafeff7cb2feff00b9feff72d0feffc8defeff5cedfeff7afafeffc224ffff9efbffff000000001612010024120100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -401,9 +401,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.4108472, y: 2.249838, z: 0.47117233}
+    m_Target: {x: 6.3383236, y: -0.9363084, z: 9.708398}
     speed: 2
-    m_Value: {x: 2.4108472, y: 2.249838, z: 0.47117233}
+    m_Value: {x: 6.3383236, y: -0.9363084, z: 9.708398}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -427,13 +427,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.0051798737, y: -0.8311685, z: 0.007744413, w: -0.55594265}
+    m_Target: {x: 0.105927214, y: 0.5213055, z: -0.06540929, w: 0.84424037}
     speed: 2
-    m_Value: {x: -0.0051798737, y: -0.8311685, z: 0.007744413, w: -0.55594265}
+    m_Value: {x: 0.105927214, y: 0.5213055, z: -0.06540929, w: 0.84424037}
   m_Size:
-    m_Target: 3.6837811
+    m_Target: 19.480448
     speed: 2
-    m_Value: 3.6837811
+    m_Value: 19.480448
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -484,20 +484,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Models/Barriers/BrokenWall1
+    - Assets/Lightning
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Models/Barriers/BrokenWall1
+  - Assets/Lightning
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\thoma\Desktop\GAMEDEV\Project-Survival\Unity\Project
+  m_LastProjectPath: C:\Users\thoma\Desktop\GAMEDEV - kopie\Project-Survival\Unity\Project
     Survival
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 442}
-    m_SelectedIDs: fe2f0000
-    m_LastClickedID: 12286
-    m_ExpandedIDs: 00000000d2280000002900001e290000322900004c290000c8290000402a0000762a0000902a0000de2a0000202b0000342b00004a2b0000242c00002e2c00007c2c0000182d0000462d0000c42d0000d22d0000b62e0000be2e0000562f00005e2f0000dc2f0000043000002a300000583000008644000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 111}
+    m_SelectedIDs: 8e2a0000
+    m_LastClickedID: 10894
+    m_ExpandedIDs: 00000000d2280000fa280000fe2800001c290000302900004a290000c62900003e2a0000742a00008e2a0000dc2a00001e2b0000322b0000482b0000242c00002e2c00007c2c0000182d0000462d0000c42d0000d22d0000b82e0000c02e0000582f0000602f0000dc2f0000063000002c3000005a30000080440000d8490000da490000dc490000424a00004e4a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -525,7 +525,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d2280000002900001e290000322900004c290000c8290000402a0000762a0000902a0000de2a0000202b0000342b00004a2b0000242c00002e2c00007c2c0000182d0000462d0000c42d0000d22d0000b62e0000be2e0000562f00005e2f0000dc2f0000043000002a300000583000008644000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000d2280000fa280000fe2800001c290000302900004a290000c62900003e2a0000742a00008e2a0000dc2a00001e2b0000322b0000482b0000242c00002e2c00007c2c0000182d0000462d0000c42d0000d22d0000b82e0000c02e0000582f0000602f0000dc2f0000063000002c3000005a30000080440000d8490000da490000dc490000424a00004e4a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
