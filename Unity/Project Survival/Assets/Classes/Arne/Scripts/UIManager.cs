@@ -49,8 +49,8 @@ public class UIManager : MonoBehaviour
 	//sets some things ready
 	private void Awake () {	
 		
-		camRotateScript = GameObject.Find("Camera").GetComponent<RotateCamera>();
-		playerStats = GameObject.Find("Body").GetComponent<PlayerStats>();
+		//camRotateScript = GameObject.Find("Camera").GetComponent<RotateCamera>();
+		playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
 		CheckUIState();
 
 		cursorActive = false;
@@ -65,7 +65,7 @@ public class UIManager : MonoBehaviour
 
         case UIState.MainMenu:
 
-			camRotateScript.gameObject.SetActive(true);
+			//camRotateScript.gameObject.SetActive(true);
 
 			Time.timeScale = 0;
             List<RectTransform> mainmenulist = new List<RectTransform>() {mainMenu};
@@ -75,7 +75,7 @@ public class UIManager : MonoBehaviour
 
         case UIState.Ingame:
 
-			camRotateScript.gameObject.SetActive(false);
+			//camRotateScript.gameObject.SetActive(false);
 			List<RectTransform> ingameList = new List<RectTransform>() {ingame};
 			EnableMenuItems(ingame);
 			SwitchCursorState();
